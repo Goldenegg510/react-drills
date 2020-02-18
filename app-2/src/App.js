@@ -3,16 +3,19 @@ import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      h2array: ['hello', 'jake', 'app-2']
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        {this.state.h2array.map(element => {
+          return(<h2>{element}</h2>)
+        })}
       </div>
     );
   }
